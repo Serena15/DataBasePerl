@@ -5,12 +5,7 @@ sub search_by_name {
   my $self = shift;
   my $name = shift;
   $name = "%".$name."%";
-  return $self->search( {
-    -or => [
-    'first_name' => {like => $name},
-    'last_name'  => {like => $name},
-    ]
-  } );
+  return $self->search( { -or => [ 'first_name' => {like => $name}, 'last_name'  => {like => $name}, ] } );
 }
 
 1;
